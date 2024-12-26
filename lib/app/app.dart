@@ -8,6 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "flutter first app",
+      theme: ThemeData(primarySwatch: Colors.indigo),
       home: HomeView(),
     );
   }
