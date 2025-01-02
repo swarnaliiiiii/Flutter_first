@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_first/views/home_view.dart';
+import 'package:flutter_first/app/home_view.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -8,7 +9,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "flutter first app",
-      theme: ThemeData(primarySwatch: Colors.indigo),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          primarySwatch: Colors.indigo,
+          fontFamily: GoogleFonts.dmSans().fontFamily),
       home: HomeView(),
     );
   }
