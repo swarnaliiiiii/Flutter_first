@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class IcecreamView extends StatefulWidget {
   const IcecreamView({super.key});
@@ -8,6 +11,21 @@ class IcecreamView extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<IcecreamView> {
+  Map<String, dynamic>? dicodedicecream;
+  @override
+  void initState() {
+    super.initState();
+    loadIcecream();
+  }
+
+  Future<void> loadIcecream() async {
+    final icecream = await rootBundle.loadString("assets/icecream.json");
+    final dicodedicecream = jsonDecode(icecream);
+    await Future.delayed(const Duration(seconds: 1));
+    print(dicodedicecream);
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,6 +39,10 @@ class _MyWidgetState extends State<IcecreamView> {
             "We have something yummy for everyone",
             style: Theme.of(context).textTheme.bodySmall,
           ),
+          if (dicodedicecream != null)
+            const Text("Icecreams Loaded")
+          else
+            Center(child: const CircularProgressIndicator.adaptive())
         ],
       ),
     );
