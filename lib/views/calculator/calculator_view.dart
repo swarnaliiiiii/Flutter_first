@@ -48,17 +48,19 @@ class _CalculatorViewState extends State<CalculatorView> {
             children: [
               FloatingActionButton(
                 onPressed: () {
+                  setState(() {
                   z = (num.tryParse(displayOneController.text) ?? 0) +
                       (num.tryParse(displayTwoController.text) ?? 0);
                   print(z);
+                });
                 },
                 child: const Icon(CupertinoIcons.add),
               ),
               FloatingActionButton(
                 onPressed: () {
                   setState(() {
-                    z = num.tryParse(displayOneController.text)! -
-                        num.tryParse(displayTwoController.text)!;
+                    z = (num.tryParse(displayOneController.text)?? 0) -
+                        (num.tryParse(displayTwoController.text)?? 0);
                     print(z);
                   });
                 },

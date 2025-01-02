@@ -1,0 +1,68 @@
+[
+    {
+        "flavor": "Vanilla",
+        "description": "Classic creamy vanilla ice cream made with real vanilla beans.",
+        "toppings": ["Sprinkles", "Cherries", "Caramel Sauce"],
+        "ingredients": [
+            { "name": "Milk", "quantity": "500ml" },
+            { "name": "Sugar", "quantity": "100g" },
+            { "name": "Vanilla Extract", "quantity": "1 tsp" },
+            { "name": "Cream", "quantity": "200ml" }
+        ],
+        "image": "https://images.unsplash.com/photo-1560008581-09826d1de69e?q=80&w=1944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "price": 3.5
+    },
+    {
+        "flavor": "Chocolate",
+        "description": "Rich and smooth chocolate ice cream made with premium cocoa.",
+        "toppings": ["Chocolate Chips", "Whipped Cream", "Fudge Sauce"],
+        "ingredients": [
+            { "name": "Milk", "quantity": "500ml" },
+            { "name": "Sugar", "quantity": "120g" },
+            { "name": "Cocoa Powder", "quantity": "50g" },
+            { "name": "Cream", "quantity": "200ml" }
+        ],
+        "image":"https://images.unsplash.com/photo-1630301786766-70c27110f563?q=80&w=1926&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "price": 4.0
+    },
+    {
+        "flavor": "Strawberry",
+        "description": "Fresh and fruity strawberry ice cream with real strawberry chunks.",
+        "toppings": ["Fresh Strawberries", "Whipped Cream", "Strawberry Sauce"],
+        "ingredients": [
+            { "name": "Milk", "quantity": "500ml" },
+            { "name": "Sugar", "quantity": "100g" },
+            { "name": "Fresh Strawberries", "quantity": "200g" },
+            { "name": "Cream", "quantity": "200ml" }
+        ],
+        "image":"https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "price": 3.8
+    },
+    {
+        "flavor": "Mint Chocolate Chip",
+        "description": "Refreshing mint ice cream with crunchy chocolate chips.",
+        "toppings": ["Chocolate Chips", "Mint Leaves", "Hot Fudge"],
+        "ingredients": [
+            { "name": "Milk", "quantity": "500ml" },
+            { "name": "Sugar", "quantity": "100g" },
+            { "name": "Mint Extract", "quantity": "1 tsp" },
+            { "name": "Chocolate Chips", "quantity": "50g" },
+            { "name": "Cream", "quantity": "200ml" }
+        ],
+        "image":"https://i.pinimg.com/736x/bd/ae/c9/bdaec98f42d5cc92c4d228ebdd90da05.jpg",
+        "price": 4.2
+    },
+    {
+        "flavor": "Caramel Swirl",
+        "description": "Creamy ice cream with luscious caramel swirls throughout.",
+        "toppings": ["Caramel Drizzle", "Sea Salt", "Pecans"],
+        "ingredients": [
+            { "name": "Milk", "quantity": "500ml" },
+            { "name": "Sugar", "quantity": "120g" },
+            { "name": "Caramel Sauce", "quantity": "50g" },
+            { "name": "Cream", "quantity": "200ml" }
+        ],
+        "image":"https://i.pinimg.com/736x/7d/e0/f3/7de0f37f95e501643a5a7d28dce17e29.jpg",
+        "price": 4.5
+    }
+]
