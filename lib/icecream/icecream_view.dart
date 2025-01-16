@@ -1,29 +1,15 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class IcecreamView extends StatefulWidget {
-  const IcecreamView({super.key});
+class IcecreamView extends StatelessWidget {
 
-  @override
-  State<IcecreamView> createState() => _MyWidgetState();
-}
 
-class _MyWidgetState extends State<IcecreamView> {
-  Map<String, dynamic>? dicodedicecream;
-  @override
-  void initState() {
-    super.initState();
-    loadIcecream();
-  }
-
-  Future<void> loadIcecream() async {
+  Future<Map<String,dynamic>> loadIcecream() async {
     final icecream = await rootBundle.loadString("assets/icecream.json");
-    final dicodedicecream = jsonDecode(icecream);
     await Future.delayed(const Duration(seconds: 1));
-    print(dicodedicecream);
-    setState(() {});
+    final decodedIcecream = jsonDecode(icecream);
+    return decodedIcecream;
   }
 
   @override
@@ -33,16 +19,29 @@ class _MyWidgetState extends State<IcecreamView> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("Icecream",
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+          const Text(
+            "Icecream",
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          ),
           Text(
             "We have something yummy for everyone",
             style: Theme.of(context).textTheme.bodySmall,
           ),
-          if (dicodedicecream != null)
-            const Text("Icecreams Loaded")
-          else
-            Center(child: const CircularProgressIndicator.adaptive())
+          Expanded(child: Center(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+              FutureBuilder(future: loadIcecream(), builder: (context, snapshot){
+                if(snapshot.connectionState == ConnectionState.done) {
+                  final icecream = snapshot.data as Map<String,dynamic>;
+                  return Text(icecream["icecreams"][0]["flavor"]);
+                } else {
+                  return const Center(child: CircularProgressIndicator.adaptive());
+                }
+              })  
+            ],),
+          ))
         ],
       ),
     );
